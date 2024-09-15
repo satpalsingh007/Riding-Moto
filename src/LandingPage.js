@@ -4,7 +4,7 @@ import motorStart from "./audio/motor-start.mp3"; // Correct file import
 
 const LandingPage = () => {
     const [audio, setAudio] = useState(null);
-
+    const [email, setEmail] = useState(null);
     // Initialize audio once when the component mounts
     useEffect(() => {
         const motorAudio = new Audio(motorStart);
@@ -24,7 +24,7 @@ const LandingPage = () => {
     return (
         <div className="landing">
             <div className="landing-text">
-                <h1>Riding Moto</h1>
+                <h1 className="hero glitch layers">Riding Moto</h1>
                 <div>
                     The ultimate riding experience is just around the corner.
                     While we prepare to launch, stay connected and be part of
