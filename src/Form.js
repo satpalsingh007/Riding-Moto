@@ -1,9 +1,12 @@
 const Form = () => {
     return (
-        <form>
-            <input type="text" placeholder="Enter your name" />
-            <button type="submit">Submit</button>
-        </form>
+        <div className="form-component">
+            <form className="form">
+                <input type="text" placeholder="Enter your name" />
+                <input type="email" placeholder="Enter your email" />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     );
 };
 

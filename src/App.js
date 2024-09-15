@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./Header";
 import LandingPage from "./LandingPage";
 import Form from "./Form";
+import Footer from "./Footer";
 
 const App = () => {
     return (
@@ -9,6 +10,7 @@ const App = () => {
             <Header />
             <LandingPage />
             <Form />
+            <Footer />
         </div>
     );
 };
