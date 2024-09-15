@@ -26,9 +26,7 @@ body {
     display: flex;
     align-items: center;
 }
-.logo {
-    /* z-index: 99; */
-}
+
 .coming-soon-text {
     font-family: "Playwrite CU", cursive;
     font-style: italic;
@@ -71,9 +69,9 @@ body {
 .register-button {
     height: 100px;
     width: 100px;
-    border: 3px solid grey;
+    border: 10px solid grey;
     border-radius: 50%;
-    background-color: red;
+    background-color: rgb(201, 42, 42);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,6 +79,10 @@ body {
     font-weight: 700;
     color: white;
     cursor: pointer;
+}
+.register-button:active {
+    background-color: rgb(129, 12, 12);
+    /* transition: 0.2s; */
 }
 .form-component {
     display: flex;
