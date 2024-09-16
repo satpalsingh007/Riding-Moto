@@ -1,178 +1,377 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5; /* Background color of the track */
+  border-radius: 10px; /* Round the corners of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the draggable part of the scrollbar */
+  border-radius: 10px; /* Round the corners of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the thumb when hovered */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Options are auto, thin, or none */
+  scrollbar-color: #888 #f5f5f5; /* First color is the thumb, second is the track */
+}
+
 body {
-    background-color: #f5f5f5;
-    font-family: "Signika Negative", sans-serif;
-    background-image: url("/src/images/background1.jpg");
-    background-size: cover;
-    /* overflow: hidden; */
-    overflow-x: hidden;
+  background-color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+  background-image: url("/src/images/background1.jpg");
+  background-size: cover;
+  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 .header {
-    color: #f5f5f5;
-    height: 20vh;
-    /* width: 99vw; */
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /* position: fixed; */
-    background-color: rgba(0, 0, 0, 0.691);
-    backdrop-filter: blur(5px);
-    z-index: 99;
+  color: #f5f5f5;
+  height: 20vh;
+  /* width: 99vw; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* position: fixed; */
+  background-color: rgba(0, 0, 0, 0.691);
+  backdrop-filter: blur(5px);
+  z-index: 99;
 }
 .header-right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .coming-soon-text {
-    font-family: "Playwrite CU", cursive;
-    font-style: italic;
+  font-family: "Playwrite CU", cursive;
+  font-style: italic;
 }
 .moto-gif {
-    width: 100px;
-    position: absolute;
-    animation: moveRight 5s linear infinite;
+  width: 100px;
+  position: absolute;
+  animation: moveRight 5s linear infinite;
 }
 @keyframes moveRight {
-    0% {
-        left: -100px;
-    }
-    100% {
-        left: 100%;
-    }
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 100%;
+  }
 }
 .landing {
-    color: #f5f5f5;
-    /* width: 100vw; */
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    background-color: rgba(0, 0, 0, 0.691);
-    backdrop-filter: blur(5px);
+  color: #f5f5f5;
+  /* width: 100vw; */
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: rgba(0, 0, 0, 0.691);
+  backdrop-filter: blur(5px);
 }
 .landing-text {
-    width: 60vw;
+  width: 60vw;
 }
 .landing-text > h1 {
-    text-align: center;
-    padding-bottom: 20px;
-    font-weight: 900;
-    font-size: 80px;
-    letter-spacing: 2px;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  font-weight: 900;
+  font-size: 80px;
+  letter-spacing: 2px;
+  font-family: "Fira Mono", monospace;
 }
+
+/* Glitch Effect */
+.glitch {
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+.glitch:before,
+.glitch:after {
+  content: attr(title);
+  position: absolute;
+  /* left: 0; */
+}
+
+.glitch:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+.glitch:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+/*  */
 
 /* From Uiverse.io by Gautammsharma */
 .register-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-    width: 100px;
-    padding: 10px 20px;
-    /* font-size: 24px; */
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    background-color: #ff5252;
-    border: 5px solid grey;
-    border-radius: 50%;
-    box-shadow: 5px 5px 0px #000;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  padding: 10px 20px;
+  /* font-size: 24px; */
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ed1c24;
+  border: 5px solid grey;
+  border-radius: 50%;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .register-button:hover {
-    background-color: rgb(176, 32, 32);
-    /* color: #ff5252; */
-    border: 5px solid grey;
-    box-shadow: 5px 5px 0px black;
+  background-color: #ce1c22;
+  /* color: #ff5252; */
+  border: 5px solid grey;
+  box-shadow: 5px 5px 0px black;
+  letter-spacing: 2px;
 }
 
 .register-button:active {
-    background-color: rgb(129, 12, 12);
-    box-shadow: none;
-    transform: translateY(4px);
+  background-color: rgb(129, 12, 12);
+  box-shadow: none;
+  transform: translateY(4px);
 }
 
 .form-component {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    color: #f5f5f5;
-    align-items: center;
-    justify-content: center;
-    height: 30vh;
-    background-color: rgba(0, 0, 0, 0.691);
-    backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: #f5f5f5;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  background-color: rgba(0, 0, 0, 0.691);
+  backdrop-filter: blur(5px);
 }
 .form {
-    display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    justify-content: center;
-    width: 70vw;
-    gap: 10px;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  gap: 10px;
 }
 .form > input {
-    height: 60px;
-    width: 50%;
-    background-color: #f5f5f5ac;
-    color: rgb(31, 31, 31);
-    border: 0px;
-    border-radius: 10px;
-    padding-left: 20px;
-    font-size: 20px;
+  height: 60px;
+  width: 50%;
+  background-color: #f5f5f5ac;
+  color: rgb(31, 31, 31);
+  border: 0px;
+  border-radius: 10px;
+  padding-left: 20px;
+  font-size: 20px;
+}
+.form > input:focus {
+  background-color: #f5f5f5d2;
 }
 .form > button {
-    height: 50px;
-    width: 25%;
-    border-radius: 10px;
-    background-color: #ff5252;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.submit-button:hover {
-    background-color: rgb(176, 32, 32);
+  height: 50px;
+  width: 25%;
+  border-radius: 10px;
+  background-color: #ed1c24;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 0px;
 }
 
+.submit-button:hover {
+  background-color: #ce1c22;
+  letter-spacing: 1px;
+  border: 0px;
+}
+.form-text {
+  width: 70vw;
+}
 .footer {
-    background: url("../src/images/footerBg.png");
-    background-color: rgba(0, 0, 0, 0.691);
-    backdrop-filter: blur(5px);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    height: 60vh;
-    color: #f5f5f5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  background: url("../src/images/footerBg.png");
+  background-color: rgba(0, 0, 0, 0.691);
+  backdrop-filter: blur(5px);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 60vh;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .socials {
-    padding-top: 30vh;
-    display: flex;
-    gap: 10px;
+  padding-top: 30vh;
+  display: flex;
+  gap: 10px;
 }
+
 /*  */
 /*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
+/* Responsive Styles */
+
+@media (max-width: 1200px) {
+  .header {
+    overflow-x: hidden;
+  }
+  .landing-text {
+    width: 80vw;
+  }
+  .landing-text > h1 {
+    font-size: 5vw;
+  }
+  .register-button {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    overflow-x: hidden;
+  }
+  .landing {
+    height: auto;
+    padding: 20px;
+  }
+  .landing-text > h1 {
+    font-size: 6vw;
+  }
+  .register-button {
+    height: 160px;
+    width: 160px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-component {
+    height: auto;
+    padding: 20px;
+  }
+  .form > input {
+    width: 90%;
+  }
+  .form > button {
+    width: 90%;
+  }
+  .footer {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    overflow-x: hidden;
+  }
+  .landing-text {
+    width: 90vw;
+  }
+  .landing-text > h1 {
+    font-size: 7vw;
+  }
+  .register-button {
+    height: 160px;
+    width: 160px;
+  }
+  .form > input {
+    width: 100%;
+  }
+  .form > button {
+    width: 100%;
+  }
+  .footer {
+    height: auto;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    overflow-x: hidden;
+  }
+  .landing-text > h1 {
+    font-size: 8vw;
+  }
+  .register-button {
+    height: 100px;
+    width: 100px;
+  }
+  .form > input {
+    font-size: 18px;
+  }
+  .form > button {
+    font-size: 24px;
+  }
+}
