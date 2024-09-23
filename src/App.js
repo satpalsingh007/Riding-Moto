@@ -4,12 +4,14 @@ import LandingPage from "./LandingPage";
 import Form from "./Form";
 import Footer from "./Footer";
 import ParentComponent from "./Parent";
+import Features from "./Features";
 
 const App = () => {
   return (
     <div>
       <Header />
       <ParentComponent />
+      <Features/>
       <Footer />
     </div>
   );

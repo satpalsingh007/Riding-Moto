@@ -40,7 +40,10 @@ body {
 }
 .header {
   color: #f5f5f5;
-  height: 20vh;
+  height: 26vh;
+  padding-top: 10vh;
+  padding-bottom: 25vh;
+
   /* width: 99vw; */
   display: flex;
   align-items: center;
@@ -49,24 +52,36 @@ body {
   background-color: rgba(0, 0, 0, 0.691);
   backdrop-filter: blur(5px);
   z-index: 99;
+  overflow: hidden;
 }
 .header-right {
   display: flex;
+  /* gap: 130px; */
+  padding-top: 5vh;
   align-items: center;
+  position: absolute;
+  top:70px;
+  z-index: 99;
+  animation: moveRight 10s linear infinite;
 }
 
 .coming-soon-text {
   font-family: "Playwrite CU", cursive;
   font-style: italic;
+  width: 150px;
+  
+  
+  z-index: 99;
 }
 .moto-gif {
   width: 100px;
-  position: absolute;
-  animation: moveRight 5s linear infinite;
+  /* position: absolute; */
+  /* animation: moveRight 5s linear infinite; */
+  z-index: 99;
 }
 @keyframes moveRight {
   0% {
-    left: -100px;
+    left: -250px;
   }
   100% {
     left: 100%;
@@ -79,8 +94,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  /* justify-content: center; */
+  gap: 10px;
+  padding-top: 0 ;
   background-color: rgba(0, 0, 0, 0.691);
   backdrop-filter: blur(5px);
 }
@@ -92,78 +108,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* gap: 12px; */
   padding-bottom: 20px;
   font-weight: 900;
   font-size: 80px;
-  letter-spacing: 2px;
-  font-family: "Fira Mono", monospace;
+  letter-spacing: 1px;
+  /* font-family: "Fira Mono", monospace; */
 }
 
 /* Glitch Effect */
-.glitch {
-  animation: glitch 1s linear infinite;
+.glitch-riding {
+  /* animation: glitch-riding 1s linear infinite; */
+  font-weight: 900;
 }
 
-@keyframes glitch {
-  2%,
-  64% {
-    transform: translate(2px, 0) skew(0deg);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 0) skew(0deg);
-  }
-  62% {
-    transform: translate(0, 0) skew(5deg);
-  }
+/*  */
+
+/* Glitch Effect */
+.glitch-moto {
+  /* animation: glitch-moto 1s linear infinite; */
+  font-weight: 1200;
+  color: #ed1c24;
 }
 
-.glitch:before,
-.glitch:after {
-  content: attr(title);
-  position: absolute;
-  /* left: 0; */
-}
-
-.glitch:before {
-  animation: glitchTop 1s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-@keyframes glitchTop {
-  2%,
-  64% {
-    transform: translate(2px, -2px);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 2px);
-  }
-  62% {
-    transform: translate(13px, -1px) skew(-13deg);
-  }
-}
-
-.glitch:after {
-  animation: glitchBotom 1.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom {
-  2%,
-  64% {
-    transform: translate(-2px, 0);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 0);
-  }
-  62% {
-    transform: translate(-22px, 5px) skew(21deg);
-  }
-}
 /*  */
 
 /* From Uiverse.io by Gautammsharma */
@@ -171,8 +138,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
-  width: 100px;
+  height: 110px;
+  width: 110px;
   padding: 10px 20px;
   /* font-size: 24px; */
   font-weight: bold;
@@ -180,19 +147,82 @@ body {
   text-decoration: none;
   color: #fff;
   background-color: #ed1c24;
-  border: 5px solid grey;
+  border: 5px solid rgb(0, 0, 0);
   border-radius: 50%;
   box-shadow: 5px 5px 0px #000;
   transition: all 0.3s ease;
   cursor: pointer;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% {
+    background-color: #b20000;
+    -webkit-box-shadow: 0 0 3px #b20000;
+  }
+  50% {
+    background-color: #ff0000;
+    -webkit-box-shadow: 0 0 40px #ff0000;
+  }
+  100% {
+    background-color: #b20000;
+    -webkit-box-shadow: 0 0 3px #b20000;
+  }
+}
+
+@-moz-keyframes glowing {
+  0% {
+    background-color: #b20000;
+    -moz-box-shadow: 0 0 3px #b20000;
+  }
+  50% {
+    background-color: #ff0000;
+    -moz-box-shadow: 0 0 40px #ff0000;
+  }
+  100% {
+    background-color: #b20000;
+    -moz-box-shadow: 0 0 3px #b20000;
+  }
+}
+
+@-o-keyframes glowing {
+  0% {
+    background-color: #b20000;
+    box-shadow: 0 0 3px #b20000;
+  }
+  50% {
+    background-color: #ff0000;
+    box-shadow: 0 0 40px #ff0000;
+  }
+  100% {
+    background-color: #b20000;
+    box-shadow: 0 0 3px #b20000;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #b20000;
+    box-shadow: 0 0 3px #b20000;
+  }
+  50% {
+    background-color: #ff0000;
+    box-shadow: 0 0 40px #ff0000;
+  }
+  100% {
+    background-color: #b20000;
+    box-shadow: 0 0 3px #b20000;
+  }
 }
 
 .register-button:hover {
   background-color: #ce1c22;
   /* color: #ff5252; */
-  border: 5px solid grey;
+  /* border: 5px solid grey; */
   box-shadow: 5px 5px 0px black;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .register-button:active {
@@ -253,6 +283,12 @@ body {
 .form-text {
   width: 70vw;
 }
+
+
+
+
+
+
 .footer {
   background: url("../src/images/footerBg.png");
   background-color: rgba(0, 0, 0, 0.691);
@@ -280,7 +316,19 @@ body {
 @media (max-width: 1200px) {
   .header {
     overflow-x: hidden;
+    padding: 0;
+    height: 20vh;
   }
+
+
+  .header-right{
+    /* padding-top: 1vh; */
+  }
+  .landing {
+    height: auto;
+    padding: 20px;
+  }
+
   .landing-text {
     width: 80vw;
   }
@@ -288,16 +336,17 @@ body {
     font-size: 5vw;
   }
   .register-button {
-    height: 80px;
-    width: 80px;
+    height: 120px;
+    width: 120px;
   }
 }
 
 @media (max-width: 992px) {
   .header {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
+    /* flex-direction: column; */
+    /* height: 10vh; */
+    padding-top: 5vh;
+    padding-bottom: 10vh;
     overflow-x: hidden;
   }
   .landing {
@@ -334,6 +383,7 @@ body {
 @media (max-width: 768px) {
   .header {
     overflow-x: hidden;
+    padding-bottom: 20vh;
   }
   .landing-text {
     width: 90vw;
@@ -360,6 +410,11 @@ body {
 @media (max-width: 576px) {
   .header {
     overflow-x: hidden;
+    padding-bottom: 20vh;
+  }
+
+  .header-right{
+    padding-top: 0;
   }
   .landing-text > h1 {
     font-size: 8vw;

@@ -5,8 +5,13 @@ const LandingPage = ({ onRegisterClick }) => {
   return (
     <div className="landing">
       <div className="landing-text">
-        <h1 className="glitch" title="RidingMoto">
-          RidingMoto
+        <h1>
+          <span className="glitch-riding" title="Riding">
+            Riding
+          </span>
+          <span className="glitch-moto" title="Moto">
+            Moto
+          </span>
         </h1>
         <div>
           The ultimate riding experience is just around the corner. While we
